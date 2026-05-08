@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-# BARIS INI PENTING: Memberi izin agar Action bisa berjalan lancar
 permissions:
   contents: write
 
@@ -33,7 +32,7 @@ jobs:
         # Pastikan class AssertionTest sudah kamu buat di src/test/java/org/ouch/
         mvn exec:java -Dexec.mainClass="org.ouch.AssertionTest" -Dexec.args="-ea"
 
-    # --- POIN 4: INTEGRASI SNYK (PENGGANTI SONAR) ---
+ 
     - name: Run Snyk Security Scan
       uses: snyk/actions/maven@master
       env:
